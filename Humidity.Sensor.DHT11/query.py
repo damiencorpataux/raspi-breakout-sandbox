@@ -7,6 +7,9 @@
 import cgitb
 cgitb.enable()
 
+# html header
+print "Content-type: application/json\n"
+
 # status led -> high
 import commands
 commands.getstatusoutput("sudo /home/damien/breakout/gpio/set.sh 17 1")
@@ -57,9 +60,10 @@ data = {
         "lat": None,
         "alt": None,
         "orientation": None,
-        "azimuth": None
+        "azimuth": None,
+        "description": "Living room, 2 people living, ground floor",
         # FIXME: Types should be described concisely & precisely in a ref table
-        "environment": ["indoor", "roofed", "people", "nature", "animals"]
+        "environment": ["indoor", "outdoor", "sheltered", "people", "animals", "botanic"]
     },
     "license": {
         "url": "http://creativecommons.org/licenses/by-nd/3.0/deed"
