@@ -1,3 +1,6 @@
+This examples features:
 - DHT11 sensor reader: http://www.rpiblog.com/2012/11/interfacing-temperature-and-humidity.html
+- WiringPi git repo: git://git.drogon.net/wiringPi
 
-WiringPi git repo: git://git.drogon.net/wiringPi
+Enhancements:
+- Use/adapt the DHT11 library for arduino: http://playground.arduino.cc/Main/DHT11Lib
