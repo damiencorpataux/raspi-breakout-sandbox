@@ -7,7 +7,7 @@ if [ -z "$2" ]; then
 else
     for N in $1; do
 	    # Sets GPIO pin to output, if necessary
-        DIR=$(cat /sys/class/gpio/gpio$N/direction)
+        DIR=$(cat /sys/class/gpio/gpio$N/direction 2>/dev/null)
         if [ -z "$DIR" ] || [ "$DIR" != "out" ]; then
             echo "Setting pin $N to ouput"
 		    echo $N > /sys/class/gpio/export
