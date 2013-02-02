@@ -30,12 +30,18 @@ r = sensor["humidity-relative"] if "humidity-relative" in sensor else None
 data = {
 	"data": {
 		"temperature": {
-			"celsius": c,
+			"value": c,
+            "measurement": "Degree Celsius",
+            "symbol": "°C",
 			"accuracy": "±2.0",
+            "range": "0-50"
 		},
 		"humidity": {
-			"relative": r,
-			"accuracy": "±5.0"
+			"value": r,
+            "measurement": "Relative humidity",
+            "symbol": "%RH",
+			"accuracy": "±5.0",
+            "range": "20-90"
 		},
 	},
 	"status": {
@@ -50,15 +56,18 @@ data = {
     # temperature,25,°C,2,DHT11
     # humidity,31,%,5,DHT11
 	"sensor": {
-		"model": "DHT11 (RHT01)",
+		"model": ["DHT11", "RHT01"],
+        "serial": None,
+        "response-time": "<5", # [s]econds
+        "interchangeability": "full",
 		"url": "http://shop.boxtec.ch/digital-humiditytemperature-sensor-dht11-rht01-p-40242.html",
 	},
     # FIXME: location should be added by a broader script,
     # managing/gathering all sensors data access
     "location": {
-        "lon": None,
-        "lat": None,
-        "alt": None,
+        "lat": "46.507489",
+        "lon": "6.653775",
+        "elevation": "398.6", # [m]eters
         "orientation": None,
         "azimuth": None,
         "description": "Living room, 2 people living, ground floor",
