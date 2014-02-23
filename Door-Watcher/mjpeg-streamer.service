@@ -1,0 +1,10 @@
+# Arch Linux systemd daemon script
+
+[Unit]
+Description=MJPG Streamer
+ 
+[Service]
+ExecStart=/usr/bin/mjpg_streamer -i "input_uvc.so -y -f 1 -r VGA -d /dev/video0" -o "output_http.so -p 8080 -w /usr/share/mjpg-streamer/www"
+ 
+[Install]
+WantedBy=multi-user.target
